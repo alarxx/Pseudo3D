@@ -5,8 +5,8 @@ import java.awt.event.*;
 
 public class TestMouseInput extends Frame {
 
-    private String msg = "";
-    private int mouseX = 0, mouseY = 0;
+    private String msg = "Hello";
+    private int mouseX = 100, mouseY = 100;
 
     public static void main(String[] args){
         TestMouseInput tmi = new TestMouseInput();
@@ -23,16 +23,15 @@ public class TestMouseInput extends Frame {
         addMouseMotionListener( mouseListener );
 
         addWindowListener( windowAdapter );
-
     }
 
     @Override
     public void paint(Graphics g){
-        System.out.println(msg);
         g.drawString(msg, mouseX, mouseY);
     }
 
     private class MyMouseListener implements MouseListener, MouseMotionListener{
+
         @Override
         public void mouseClicked(MouseEvent me){
             msg += " -- click received";
